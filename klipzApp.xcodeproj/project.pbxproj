@@ -8,20 +8,50 @@
 
 /* Begin PBXBuildFile section */
 		C56418BF1DE996F900547074 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56418BE1DE996F900547074 /* AppDelegate.swift */; };
-		C56418C11DE996F900547074 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56418C01DE996F900547074 /* ViewController.swift */; };
 		C56418C41DE996F900547074 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C56418C21DE996F900547074 /* Main.storyboard */; };
 		C56418C61DE996F900547074 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C56418C51DE996F900547074 /* Assets.xcassets */; };
 		C56418C91DE996F900547074 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C56418C71DE996F900547074 /* LaunchScreen.storyboard */; };
+		C56418D11DE9975B00547074 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C56418D01DE9975B00547074 /* libsqlite3.tbd */; };
+		C56418D31DE9977800547074 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C56418D21DE9977800547074 /* libz.tbd */; };
+		C56418D51DE997A900547074 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56418D41DE997A900547074 /* AudioToolbox.framework */; };
+		C56418D71DE997C400547074 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56418D61DE997C400547074 /* CFNetwork.framework */; };
+		C56418D91DE997D700547074 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56418D81DE997D700547074 /* CoreGraphics.framework */; };
+		C56418DB1DE9980700547074 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56418DA1DE9980700547074 /* CoreLocation.framework */; };
+		C56418DD1DE99CF800547074 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56418DC1DE99CF800547074 /* QuartzCore.framework */; };
+		C56418DF1DE99D2A00547074 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56418DE1DE99D2A00547074 /* Security.framework */; };
+		C56418E11DE99D5300547074 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56418E01DE99D5300547074 /* StoreKit.framework */; };
+		C56418E31DE99D8D00547074 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56418E21DE99D8D00547074 /* SystemConfiguration.framework */; };
+		C56418E61DE99E4B00547074 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56418E41DE99E4B00547074 /* Bolts.framework */; };
+		C56418E71DE99E4B00547074 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56418E51DE99E4B00547074 /* Parse.framework */; };
+		C56418ED1DE9AF2B00547074 /* signUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56418EC1DE9AF2B00547074 /* signUpVC.swift */; };
+		C56418EF1DE9AF4400547074 /* signInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56418EE1DE9AF4400547074 /* signInVC.swift */; };
+		C56418F11DE9AF7400547074 /* resetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56418F01DE9AF7400547074 /* resetPasswordVC.swift */; };
+		C56418F41DEA4F4200547074 /* default_avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C56418F31DEA4F4200547074 /* default_avatar@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C56418BB1DE996F900547074 /* klipzApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = klipzApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C56418BE1DE996F900547074 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C56418C01DE996F900547074 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C56418C31DE996F900547074 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C56418C51DE996F900547074 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C56418C81DE996F900547074 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C56418CA1DE996F900547074 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C56418D01DE9975B00547074 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		C56418D21DE9977800547074 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		C56418D41DE997A900547074 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		C56418D61DE997C400547074 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		C56418D81DE997D700547074 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C56418DA1DE9980700547074 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C56418DC1DE99CF800547074 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C56418DE1DE99D2A00547074 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C56418E01DE99D5300547074 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		C56418E21DE99D8D00547074 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C56418E41DE99E4B00547074 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		C56418E51DE99E4B00547074 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		C56418EC1DE9AF2B00547074 /* signUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUpVC.swift; sourceTree = "<group>"; };
+		C56418EE1DE9AF4400547074 /* signInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = signInVC.swift; path = ../signInVC.swift; sourceTree = "<group>"; };
+		C56418F01DE9AF7400547074 /* resetPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = resetPasswordVC.swift; path = ../resetPasswordVC.swift; sourceTree = "<group>"; };
+		C56418F31DEA4F4200547074 /* default_avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "default_avatar@2x.png"; path = "Assets.xcassets/images/default_avatar@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +59,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C56418E31DE99D8D00547074 /* SystemConfiguration.framework in Frameworks */,
+				C56418E11DE99D5300547074 /* StoreKit.framework in Frameworks */,
+				C56418DF1DE99D2A00547074 /* Security.framework in Frameworks */,
+				C56418DD1DE99CF800547074 /* QuartzCore.framework in Frameworks */,
+				C56418DB1DE9980700547074 /* CoreLocation.framework in Frameworks */,
+				C56418D91DE997D700547074 /* CoreGraphics.framework in Frameworks */,
+				C56418D71DE997C400547074 /* CFNetwork.framework in Frameworks */,
+				C56418D51DE997A900547074 /* AudioToolbox.framework in Frameworks */,
+				C56418E61DE99E4B00547074 /* Bolts.framework in Frameworks */,
+				C56418D31DE9977800547074 /* libz.tbd in Frameworks */,
+				C56418E71DE99E4B00547074 /* Parse.framework in Frameworks */,
+				C56418D11DE9975B00547074 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +80,18 @@
 		C56418B21DE996F900547074 = {
 			isa = PBXGroup;
 			children = (
+				C56418E41DE99E4B00547074 /* Bolts.framework */,
+				C56418E51DE99E4B00547074 /* Parse.framework */,
+				C56418E21DE99D8D00547074 /* SystemConfiguration.framework */,
+				C56418E01DE99D5300547074 /* StoreKit.framework */,
+				C56418DE1DE99D2A00547074 /* Security.framework */,
+				C56418DC1DE99CF800547074 /* QuartzCore.framework */,
+				C56418DA1DE9980700547074 /* CoreLocation.framework */,
+				C56418D81DE997D700547074 /* CoreGraphics.framework */,
+				C56418D61DE997C400547074 /* CFNetwork.framework */,
+				C56418D41DE997A900547074 /* AudioToolbox.framework */,
+				C56418D21DE9977800547074 /* libz.tbd */,
+				C56418D01DE9975B00547074 /* libsqlite3.tbd */,
 				C56418BD1DE996F900547074 /* klipzApp */,
 				C56418BC1DE996F900547074 /* Products */,
 			);
@@ -54,14 +108,25 @@
 		C56418BD1DE996F900547074 /* klipzApp */ = {
 			isa = PBXGroup;
 			children = (
+				C56418F21DEA4EF800547074 /* images */,
+				C56418EC1DE9AF2B00547074 /* signUpVC.swift */,
+				C56418EE1DE9AF4400547074 /* signInVC.swift */,
+				C56418F01DE9AF7400547074 /* resetPasswordVC.swift */,
 				C56418BE1DE996F900547074 /* AppDelegate.swift */,
-				C56418C01DE996F900547074 /* ViewController.swift */,
 				C56418C21DE996F900547074 /* Main.storyboard */,
 				C56418C51DE996F900547074 /* Assets.xcassets */,
 				C56418C71DE996F900547074 /* LaunchScreen.storyboard */,
 				C56418CA1DE996F900547074 /* Info.plist */,
 			);
 			path = klipzApp;
+			sourceTree = "<group>";
+		};
+		C56418F21DEA4EF800547074 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				C56418F31DEA4F4200547074 /* default_avatar@2x.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C56418C91DE996F900547074 /* LaunchScreen.storyboard in Resources */,
+				C56418F41DEA4F4200547074 /* default_avatar@2x.png in Resources */,
 				C56418C61DE996F900547074 /* Assets.xcassets in Resources */,
 				C56418C41DE996F900547074 /* Main.storyboard in Resources */,
 			);
@@ -135,8 +201,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C56418C11DE996F900547074 /* ViewController.swift in Sources */,
+				C56418ED1DE9AF2B00547074 /* signUpVC.swift in Sources */,
+				C56418EF1DE9AF4400547074 /* signInVC.swift in Sources */,
 				C56418BF1DE996F900547074 /* AppDelegate.swift in Sources */,
+				C56418F11DE9AF7400547074 /* resetPasswordVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +317,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = klipzApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = macbookpro.klipzApp;
@@ -260,6 +332,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = klipzApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = macbookpro.klipzApp;
