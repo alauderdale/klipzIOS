@@ -8,7 +8,7 @@
 
 import UIKit
 
-class signUpVC: UIViewController {
+class signUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //scrollView
     @IBOutlet weak var scrollView: UIScrollView!
@@ -53,9 +53,35 @@ class signUpVC: UIViewController {
         hideTap.numberOfTapsRequired = 1
         self.view.userInteractionEnabled = true
         self.view.addGestureRecognizer(hideTap)
+        
+        //round avatar
+        avatarImg.layer.cornerRadius = avatarImg.frame.width / 2
+        avatarImg.clipsToBounds = true
+        
+        //declare select image tap
+        let avaTap = UITapGestureRecognizer(target: self, action: #selector(signUpVC.loadImg(_:)))
+        avaTap.numberOfTapsRequired = 1
+        avatarImg.userInteractionEnabled = true
+        avatarImg.addGestureRecognizer(avaTap)
 
     }
     
+    //call picker to select image
+    func loadImg(recognizer: UITapGestureRecognizer){
+        
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .PhotoLibrary
+        picker.allowsEditing = true
+        presentViewController(picker, animated: true, completion: nil)
+    
+    }
+    
+    //connect selected image to image view
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        avatarImg.image = info[UIImagePickerControllerEditedImage] as? UIImage
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     //hidekayboard if tapped
     func hideKeyboardTap(recogmizer:UITapGestureRecognizer){
