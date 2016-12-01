@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,17 +18,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+
+            //load parse
+            Parse.enableLocalDatastore()
+        Parse.setApplicationId("QXBCa3jw5Oh8gPrYpJiULEKIv05owWans9WwSWIM", clientKey: "OuLk16MM3vtCibeSSLuuD3uBxKRjCZAYuvMgUvol")
         
-        //configuration of parse code in Heroku
-        let parseConfig = ParseClientConfiguration {(ParseMutableClientConfiguration) in
-            
-            //accessing Heroku app via ID & Key
-            ParseMutableClientConfiguration.applicationId = "klipzApp"
-            ParseMutableClientConfiguration.clientKey = "klipzAppisAmazingness"
-            ParseMutableClientConfiguration.server = "http://klipz.herokuapp.com/parse"
-        }
+            PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
-        Parse.initializeWithConfiguration(parseConfig)
+
+        
+        
+        //old use of heroku uncomment entire block below
+        
+//        //configuration of parse code in Heroku
+//        let parseConfig = ParseClientConfiguration {(ParseMutableClientConfiguration) in
+//            
+//            //accessing Heroku app via ID & Key
+//            ParseMutableClientConfiguration.applicationId = "klipzApp"
+//            ParseMutableClientConfiguration.clientKey = "klipzAppisAmazingness"
+//            ParseMutableClientConfiguration.server = "http://klipz.herokuapp.com/parse"
+//        }
+//        
+//        Parse.initializeWithConfiguration(parseConfig)
+        
+
+        
+        //call login function
+        login()
         
         return true
     }
@@ -52,6 +69,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func login(){
+        
+        //remember users login
+        let username :String? = NSUserDefaults.standardUserDefaults().stringForKey("username")
+        
+        //if logged in
+        if username != nil {
+            
+            let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let myTabBar = storyboard.instantiateViewControllerWithIdentifier("tabBar") as! UITabBarController
+            window?.rootViewController = myTabBar
+        
+        }
+    
     }
 
 

@@ -27,6 +27,13 @@
 		C56418EF1DE9AF4400547074 /* signInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56418EE1DE9AF4400547074 /* signInVC.swift */; };
 		C56418F11DE9AF7400547074 /* resetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56418F01DE9AF7400547074 /* resetPasswordVC.swift */; };
 		C56418F41DEA4F4200547074 /* default_avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C56418F31DEA4F4200547074 /* default_avatar@2x.png */; };
+		C56418F71DEAF98A00547074 /* HVD Fonts - BrandonText-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C56418F61DEAF98A00547074 /* HVD Fonts - BrandonText-Bold.otf */; };
+		C56418FA1DEAF9A800547074 /* HVD Fonts - BrandonText-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C56418F91DEAF9A800547074 /* HVD Fonts - BrandonText-Light.otf */; };
+		C56418FC1DEAF9CA00547074 /* HVD Fonts - BrandonText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C56418FB1DEAF9CA00547074 /* HVD Fonts - BrandonText-Regular.otf */; };
+		C56418FE1DEAFCFE00547074 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C56418FD1DEAFCFE00547074 /* bg@2x.png */; };
+		C56419001DEB085A00547074 /* homeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56418FF1DEB085A00547074 /* homeVC.swift */; };
+		C56419081DEB0AE900547074 /* headerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56419071DEB0AE900547074 /* headerView.swift */; };
+		C564190A1DEB0F4800547074 /* pictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56419091DEB0F4800547074 /* pictureCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,9 +56,16 @@
 		C56418E41DE99E4B00547074 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		C56418E51DE99E4B00547074 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		C56418EC1DE9AF2B00547074 /* signUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUpVC.swift; sourceTree = "<group>"; };
-		C56418EE1DE9AF4400547074 /* signInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = signInVC.swift; path = ../signInVC.swift; sourceTree = "<group>"; };
-		C56418F01DE9AF7400547074 /* resetPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = resetPasswordVC.swift; path = ../resetPasswordVC.swift; sourceTree = "<group>"; };
+		C56418EE1DE9AF4400547074 /* signInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signInVC.swift; sourceTree = "<group>"; };
+		C56418F01DE9AF7400547074 /* resetPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resetPasswordVC.swift; sourceTree = "<group>"; };
 		C56418F31DEA4F4200547074 /* default_avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "default_avatar@2x.png"; path = "Assets.xcassets/images/default_avatar@2x.png"; sourceTree = "<group>"; };
+		C56418F61DEAF98A00547074 /* HVD Fonts - BrandonText-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "HVD Fonts - BrandonText-Bold.otf"; path = "Assets.xcassets/fonts/HVD Fonts - BrandonText-Bold.otf"; sourceTree = "<group>"; };
+		C56418F91DEAF9A800547074 /* HVD Fonts - BrandonText-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "HVD Fonts - BrandonText-Light.otf"; path = "Assets.xcassets/fonts/HVD Fonts - BrandonText-Light.otf"; sourceTree = "<group>"; };
+		C56418FB1DEAF9CA00547074 /* HVD Fonts - BrandonText-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "HVD Fonts - BrandonText-Regular.otf"; path = "Assets.xcassets/fonts/HVD Fonts - BrandonText-Regular.otf"; sourceTree = "<group>"; };
+		C56418FD1DEAFCFE00547074 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg@2x.png"; path = "Assets.xcassets/images/bg@2x.png"; sourceTree = "<group>"; };
+		C56418FF1DEB085A00547074 /* homeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeVC.swift; sourceTree = "<group>"; };
+		C56419071DEB0AE900547074 /* headerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = headerView.swift; sourceTree = "<group>"; };
+		C56419091DEB0F4800547074 /* pictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pictureCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,20 +94,11 @@
 		C56418B21DE996F900547074 = {
 			isa = PBXGroup;
 			children = (
-				C56418E41DE99E4B00547074 /* Bolts.framework */,
-				C56418E51DE99E4B00547074 /* Parse.framework */,
-				C56418E21DE99D8D00547074 /* SystemConfiguration.framework */,
-				C56418E01DE99D5300547074 /* StoreKit.framework */,
-				C56418DE1DE99D2A00547074 /* Security.framework */,
-				C56418DC1DE99CF800547074 /* QuartzCore.framework */,
-				C56418DA1DE9980700547074 /* CoreLocation.framework */,
-				C56418D81DE997D700547074 /* CoreGraphics.framework */,
-				C56418D61DE997C400547074 /* CFNetwork.framework */,
-				C56418D41DE997A900547074 /* AudioToolbox.framework */,
 				C56418D21DE9977800547074 /* libz.tbd */,
 				C56418D01DE9975B00547074 /* libsqlite3.tbd */,
 				C56418BD1DE996F900547074 /* klipzApp */,
 				C56418BC1DE996F900547074 /* Products */,
+				C56418F51DEADD1000547074 /* frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,15 +113,19 @@
 		C56418BD1DE996F900547074 /* klipzApp */ = {
 			isa = PBXGroup;
 			children = (
+				C56418F81DEAF99600547074 /* fonts */,
 				C56418F21DEA4EF800547074 /* images */,
 				C56418EC1DE9AF2B00547074 /* signUpVC.swift */,
+				C56419071DEB0AE900547074 /* headerView.swift */,
 				C56418EE1DE9AF4400547074 /* signInVC.swift */,
 				C56418F01DE9AF7400547074 /* resetPasswordVC.swift */,
 				C56418BE1DE996F900547074 /* AppDelegate.swift */,
 				C56418C21DE996F900547074 /* Main.storyboard */,
+				C56419091DEB0F4800547074 /* pictureCell.swift */,
 				C56418C51DE996F900547074 /* Assets.xcassets */,
 				C56418C71DE996F900547074 /* LaunchScreen.storyboard */,
 				C56418CA1DE996F900547074 /* Info.plist */,
+				C56418FF1DEB085A00547074 /* homeVC.swift */,
 			);
 			path = klipzApp;
 			sourceTree = "<group>";
@@ -124,9 +133,37 @@
 		C56418F21DEA4EF800547074 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				C56418FD1DEAFCFE00547074 /* bg@2x.png */,
 				C56418F31DEA4F4200547074 /* default_avatar@2x.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		C56418F51DEADD1000547074 /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C56418E41DE99E4B00547074 /* Bolts.framework */,
+				C56418E51DE99E4B00547074 /* Parse.framework */,
+				C56418E21DE99D8D00547074 /* SystemConfiguration.framework */,
+				C56418E01DE99D5300547074 /* StoreKit.framework */,
+				C56418DE1DE99D2A00547074 /* Security.framework */,
+				C56418DC1DE99CF800547074 /* QuartzCore.framework */,
+				C56418DA1DE9980700547074 /* CoreLocation.framework */,
+				C56418D81DE997D700547074 /* CoreGraphics.framework */,
+				C56418D61DE997C400547074 /* CFNetwork.framework */,
+				C56418D41DE997A900547074 /* AudioToolbox.framework */,
+			);
+			name = frameworks;
+			sourceTree = "<group>";
+		};
+		C56418F81DEAF99600547074 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C56418FB1DEAF9CA00547074 /* HVD Fonts - BrandonText-Regular.otf */,
+				C56418F91DEAF9A800547074 /* HVD Fonts - BrandonText-Light.otf */,
+				C56418F61DEAF98A00547074 /* HVD Fonts - BrandonText-Bold.otf */,
+			);
+			name = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,9 +225,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C56418C91DE996F900547074 /* LaunchScreen.storyboard in Resources */,
+				C56418F71DEAF98A00547074 /* HVD Fonts - BrandonText-Bold.otf in Resources */,
+				C56418FC1DEAF9CA00547074 /* HVD Fonts - BrandonText-Regular.otf in Resources */,
 				C56418F41DEA4F4200547074 /* default_avatar@2x.png in Resources */,
 				C56418C61DE996F900547074 /* Assets.xcassets in Resources */,
 				C56418C41DE996F900547074 /* Main.storyboard in Resources */,
+				C56418FA1DEAF9A800547074 /* HVD Fonts - BrandonText-Light.otf in Resources */,
+				C56418FE1DEAFCFE00547074 /* bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,10 +242,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C564190A1DEB0F4800547074 /* pictureCell.swift in Sources */,
 				C56418ED1DE9AF2B00547074 /* signUpVC.swift in Sources */,
 				C56418EF1DE9AF4400547074 /* signInVC.swift in Sources */,
+				C56419001DEB085A00547074 /* homeVC.swift in Sources */,
 				C56418BF1DE996F900547074 /* AppDelegate.swift in Sources */,
 				C56418F11DE9AF7400547074 /* resetPasswordVC.swift in Sources */,
+				C56419081DEB0AE900547074 /* headerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

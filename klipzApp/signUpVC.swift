@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class signUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -25,10 +26,7 @@ class signUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     //textfield
     @IBOutlet weak var usernameTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
-    @IBOutlet weak var repeatPasswordTxt: UITextField!
-    @IBOutlet weak var fullNameTxt: UITextField!
     @IBOutlet weak var emailTxt: UITextField!
-    @IBOutlet weak var bioTxt: UITextField!
     
     //button
     @IBOutlet weak var signUpBtn: UIButton!
@@ -37,7 +35,7 @@ class signUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     //default func
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         // scrollview frame size
         scrollView.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
         scrollView.contentSize.height = self.view.frame.height
@@ -63,6 +61,14 @@ class signUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         avaTap.numberOfTapsRequired = 1
         avatarImg.userInteractionEnabled = true
         avatarImg.addGestureRecognizer(avaTap)
+        
+        //alignment
+        avatarImg.frame = CGRectMake(self.view.frame.size.width / 2 - 40, 40, 80, 80)
+        usernameTxt.frame = CGRectMake(10, avatarImg.frame.origin.y + 90, self.view.frame.size.width - 20, 30)
+        emailTxt.frame = CGRectMake(10, usernameTxt.frame.origin.y + 40, self.view.frame.size.width - 20, 30)
+        passwordTxt.frame = CGRectMake(10, emailTxt.frame.origin.y + 40, self.view.frame.size.width - 20, 30)
+        signUpBtn.frame = CGRectMake(20, passwordTxt.frame.origin.y + 60, self.view.frame.size.width / 4, 30)
+        cancelBtn.frame = CGRectMake(self.view.frame.size.width - self.view.frame.size.width / 4 - 20 , signUpBtn.frame.origin.y, self.view.frame.size.width / 4, 30)
 
     }
     
@@ -116,10 +122,69 @@ class signUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     //clicked sign up
     @IBAction func signUpBtn_click(sender: AnyObject) {
         print("sign up pressed")
+        
+        //dismiss keyboard
+        self.view.endEditing(true)
+        
+        
+        //if fields are empty
+        if (usernameTxt.text!.isEmpty || passwordTxt.text!.isEmpty || emailTxt.text!.isEmpty ){
+        
+            //alert message
+            let alert = UIAlertController(title: "Opps!", message: "Please fill all required fields", preferredStyle: UIAlertControllerStyle.Alert)
+            let ok = UIAlertAction(title: "Rock on!", style: UIAlertActionStyle.Cancel, handler: nil)
+            alert.addAction(ok)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        
+        
+        //send data to server to related columns
+        let user = PFUser()
+        user.username = usernameTxt.text?.lowercaseString
+        user.email = emailTxt.text?.lowercaseString
+        user.password = passwordTxt.text
+
+        
+        //will be assigned in edit profile
+        user["gender"] = ""
+        user["bio"] = ""
+
+        
+        //convert our image for sending to server
+        let avaData = UIImageJPEGRepresentation(avatarImg.image!, 0.5)
+        let avaFile = PFFile(name: "avatar.jpg", data: avaData!)
+        user["ava"] = avaFile
+        
+        //save data to server
+        user.signUpInBackgroundWithBlock { (success:Bool, error:NSError?) -> Void in
+            if success{
+                print("registered")
+                
+                //remember if user is logged in 
+                NSUserDefaults.standardUserDefaults().setObject(user.username, forKey: "username")
+                NSUserDefaults.standardUserDefaults().synchronize()
+                
+                //call login func from AppDelegate.swift class 
+                let appDelegate : AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                appDelegate.login()
+                
+            } else {
+                
+                //show alert message
+                let alert = UIAlertController(title: "Opps!", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
+                let ok = UIAlertAction(title: "Understood", style: UIAlertActionStyle.Cancel, handler: nil)
+                alert.addAction(ok)
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+        }
     }
     
     //clicked cancel
     @IBAction func cancelBtn_click(sender: AnyObject) {
+        
+        //hide keyboard when pressing cancel
+        self.view.endEditing(true)
+        
         print("cancel pressed")
         self.dismissViewControllerAnimated(true, completion: nil)
     }
