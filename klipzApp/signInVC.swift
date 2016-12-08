@@ -34,19 +34,19 @@ class signInVC: UIViewController {
         //declare hide keyboard tap
         let hideTap = UITapGestureRecognizer(target: self, action: #selector(signUpVC.hideKeyboardTap(_:)))
         hideTap.numberOfTapsRequired = 1
-        self.view.userInteractionEnabled = true
+        self.view.isUserInteractionEnabled = true
         self.view.addGestureRecognizer(hideTap)
         
         //alignment
-        label.frame = CGRectMake(10, 80, self.view.frame.size.width - 20, 50)
-        usernameTxt.frame = CGRectMake(10, label.frame.origin.y + 70, self.view.frame.size.width - 20, 30)
-        passwordTxt.frame = CGRectMake(10, usernameTxt.frame.origin.y + 40, self.view.frame.size.width - 20, 30 )
-        forgotBtn.frame = CGRectMake(10, passwordTxt.frame.origin.y + 30, self.view.frame.size.width - 20, 30)
-        signInBtn.frame = CGRectMake(20, forgotBtn.frame.origin.y + 40, self.view.frame.size.width / 4, 30)
-        signUpBtn.frame = CGRectMake(self.view.frame.size.width - self.view.frame.size.width / 4 - 20 , signInBtn.frame.origin.y, self.view.frame.size.width / 4, 30)
+        label.frame = CGRect(x: 10, y: 80, width: self.view.frame.size.width - 20, height: 50)
+        usernameTxt.frame = CGRect(x: 10, y: label.frame.origin.y + 70, width: self.view.frame.size.width - 20, height: 30)
+        passwordTxt.frame = CGRect(x: 10, y: usernameTxt.frame.origin.y + 40, width: self.view.frame.size.width - 20, height: 30 )
+        forgotBtn.frame = CGRect(x: 10, y: passwordTxt.frame.origin.y + 30, width: self.view.frame.size.width - 20, height: 30)
+        signInBtn.frame = CGRect(x: 20, y: forgotBtn.frame.origin.y + 40, width: self.view.frame.size.width / 4, height: 30)
+        signUpBtn.frame = CGRect(x: self.view.frame.size.width - self.view.frame.size.width / 4 - 20 , y: signInBtn.frame.origin.y, width: self.view.frame.size.width / 4, height: 30)
         
         //background
-        let bg = UIImageView(frame: CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height))
+        let bg = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
         bg.image = UIImage(named: "bg@2x.png")
         bg.layer.zPosition = -1
         self.view.addSubview(bg)
@@ -55,13 +55,13 @@ class signInVC: UIViewController {
 
     
     //hidekayboard if tapped
-    func hideKeyboardTap(recogmizer:UITapGestureRecognizer){
+    func hideKeyboardTap(_ recogmizer:UITapGestureRecognizer){
         self.view.endEditing(true)
         
     }
 
     //click sign in button
-    @IBAction func signInBtn_click(sender: AnyObject) {
+    @IBAction func signInBtn_click(_ sender: AnyObject) {
         print("sign in pressed")
         
         //hide keyboard
@@ -71,34 +71,34 @@ class signInVC: UIViewController {
         if usernameTxt.text!.isEmpty || passwordTxt.text!.isEmpty{
             
             //show alert message
-            let alert = UIAlertController(title: "Opps!", message: "Please fill all required fields", preferredStyle: UIAlertControllerStyle.Alert)
-            let ok = UIAlertAction(title: "Rock on!", style: UIAlertActionStyle.Cancel, handler: nil)
+            let alert = UIAlertController(title: "Opps!", message: "Please fill all required fields", preferredStyle: UIAlertControllerStyle.alert)
+            let ok = UIAlertAction(title: "Rock on!", style: UIAlertActionStyle.cancel, handler: nil)
             alert.addAction(ok)
-            self.presentViewController(alert, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil)
             
         
         }
         
         //login functions
-        PFUser.logInWithUsernameInBackground(usernameTxt.text!, password: passwordTxt.text!) { (user:PFUser?, error:NSError?) in
+        PFUser.logInWithUsername(inBackground: usernameTxt.text!, password: passwordTxt.text!) { (user:PFUser?, error:Error?) in
             
             if error == nil {
                 
                 //remember user or save in app memory if user logged in
-                NSUserDefaults.standardUserDefaults().setObject(user!.username, forKey: "username")
-                NSUserDefaults.standardUserDefaults().synchronize()
+                UserDefaults.standard.set(user!.username, forKey: "username")
+                UserDefaults.standard.synchronize()
                 
                 //call login function from AppDelegate.swift class
-                let appDelegate : AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                let appDelegate : AppDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.login()
                 
             } else{
               
                 //show alert message
-                let alert = UIAlertController(title: "Opps!", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
-                let ok = UIAlertAction(title: "Understood", style: UIAlertActionStyle.Cancel, handler: nil)
+                let alert = UIAlertController(title: "Opps!", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                let ok = UIAlertAction(title: "Understood", style: UIAlertActionStyle.cancel, handler: nil)
                 alert.addAction(ok)
-                self.presentViewController(alert, animated: true, completion: nil)
+                self.present(alert, animated: true, completion: nil)
                 
                 
             }

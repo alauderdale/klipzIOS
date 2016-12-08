@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 
 
@@ -15,11 +16,37 @@ class homeVC: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //background color
+        collectionView?.backgroundColor = UIColor.white
+        
+        //title at the top
+        self.navigationItem.title = PFUser.current()?.username?.uppercased()
+        
     }
 
 
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 0
+    }
+    
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "Header", for: indexPath) as! headerView
+        
+        header.usernameLbl.text = PFUser.current()?.object(forKey: "username") as? String
+        
+        header.bioLbl.text = PFUser.current()?.object(forKey: "bio") as? String
+        header.button.setTitle("edit profile", for: UIControlState.normal)
+        
+        let avaQuery = PFUser.current()?.object(forKey: "ava") as! PFFile
+        
+        avaQuery.getDataInBackground {(data:Data? , Error:Error?) -> Void in
+            
+            header.avatarImg.image = UIImage(data:data!)
+            
+        }
+        
+        return header
     }
     
     

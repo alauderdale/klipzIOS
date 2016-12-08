@@ -23,13 +23,13 @@ class resetPasswordVC: UIViewController {
         super.viewDidLoad()
         
         //alignment
-        emailTxt.frame = CGRectMake(10, 120, self.view.frame.size.width - 20, 30 )
-        resetBtn.frame = CGRectMake(20, emailTxt.frame.origin.y + 40, self.view.frame.size.width / 4, 30)
-        cancelBtn.frame = CGRectMake(self.view.frame.size.width - self.view.frame.size.width / 4 - 20 , resetBtn.frame.origin.y, self.view.frame.size.width / 4, 30)
+        emailTxt.frame = CGRect(x: 10, y: 120, width: self.view.frame.size.width - 20, height: 30 )
+        resetBtn.frame = CGRect(x: 20, y: emailTxt.frame.origin.y + 40, width: self.view.frame.size.width / 4, height: 30)
+        cancelBtn.frame = CGRect(x: self.view.frame.size.width - self.view.frame.size.width / 4 - 20 , y: resetBtn.frame.origin.y, width: self.view.frame.size.width / 4, height: 30)
     }
     
     //clicked reset button
-    @IBAction func resetBtn_click(sender: AnyObject) {
+    @IBAction func resetBtn_click(_ sender: AnyObject) {
         
         //hide keyboard
         self.view.endEditing(true)
@@ -39,29 +39,30 @@ class resetPasswordVC: UIViewController {
         if emailTxt.text!.isEmpty{
         
             //show alert message
-            let alert = UIAlertController(title: "Opps", message: "Email is empty", preferredStyle: UIAlertControllerStyle.Alert)
-            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
+            let alert = UIAlertController(title: "Opps", message: "Email is empty", preferredStyle: UIAlertControllerStyle.alert)
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
             
             alert.addAction(ok)
-            self.presentViewController(alert, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil)
             
         }
         
         //request for resetting  password
-        PFUser.requestPasswordResetForEmailInBackground(emailTxt.text!) { (success:Bool, error:NSError?)-> Void in
+        
+        PFUser.requestPasswordResetForEmail(inBackground: emailTxt.text!) { (success:Bool, error:Error?)-> Void in
             if success{
            
                 //show alert message
-                let alert = UIAlertController(title: "Check you email", message: "password reset sent", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "Check you email", message: "password reset sent", preferredStyle: UIAlertControllerStyle.alert)
                 
                 //if pressed OK call self.dismiss function
-                let ok = UIAlertAction(title: "Thanks", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+                let ok = UIAlertAction(title: "Thanks", style: UIAlertActionStyle.default, handler: { (UIAlertAction) -> Void in
                     
-                    self.dismissViewControllerAnimated(true, completion: nil)
+                    self.dismiss(animated: true, completion: nil)
                     
                 })
                 alert.addAction(ok)
-                self.presentViewController(alert, animated: true, completion: nil)
+                self.present(alert, animated: true, completion: nil)
                 
             
             } else{
@@ -74,12 +75,12 @@ class resetPasswordVC: UIViewController {
     }
     
     //clicked cancel button
-    @IBAction func cancelBtn_click(sender: AnyObject) {
+    @IBAction func cancelBtn_click(_ sender: AnyObject) {
         
         //hide keyboard when pressing cancel
         self.view.endEditing(true)
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     
