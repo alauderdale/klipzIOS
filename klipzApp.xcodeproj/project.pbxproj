@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C55177711DF97EBF000C6CE5 /* followersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55177701DF97EBF000C6CE5 /* followersVC.swift */; };
+		C55177731DF97EFD000C6CE5 /* followersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55177721DF97EFD000C6CE5 /* followersCell.swift */; };
 		C56418BF1DE996F900547074 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56418BE1DE996F900547074 /* AppDelegate.swift */; };
 		C56418C41DE996F900547074 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C56418C21DE996F900547074 /* Main.storyboard */; };
 		C56418C61DE996F900547074 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C56418C51DE996F900547074 /* Assets.xcassets */; };
@@ -34,9 +36,12 @@
 		C56419001DEB085A00547074 /* homeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56418FF1DEB085A00547074 /* homeVC.swift */; };
 		C56419081DEB0AE900547074 /* headerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56419071DEB0AE900547074 /* headerView.swift */; };
 		C564190A1DEB0F4800547074 /* pictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56419091DEB0F4800547074 /* pictureCell.swift */; };
+		C58E0E171DFC86C90023A2AB /* guestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58E0E161DFC86C90023A2AB /* guestVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C55177701DF97EBF000C6CE5 /* followersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = followersVC.swift; sourceTree = "<group>"; };
+		C55177721DF97EFD000C6CE5 /* followersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = followersCell.swift; sourceTree = "<group>"; };
 		C56418BB1DE996F900547074 /* klipzApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = klipzApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C56418BE1DE996F900547074 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C56418C31DE996F900547074 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,6 +71,7 @@
 		C56418FF1DEB085A00547074 /* homeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeVC.swift; sourceTree = "<group>"; };
 		C56419071DEB0AE900547074 /* headerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = headerView.swift; sourceTree = "<group>"; };
 		C56419091DEB0F4800547074 /* pictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pictureCell.swift; sourceTree = "<group>"; };
+		C58E0E161DFC86C90023A2AB /* guestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guestVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,9 @@
 				C56418F01DE9AF7400547074 /* resetPasswordVC.swift */,
 				C56418BE1DE996F900547074 /* AppDelegate.swift */,
 				C56418C21DE996F900547074 /* Main.storyboard */,
+				C58E0E161DFC86C90023A2AB /* guestVC.swift */,
+				C55177701DF97EBF000C6CE5 /* followersVC.swift */,
+				C55177721DF97EFD000C6CE5 /* followersCell.swift */,
 				C56418FF1DEB085A00547074 /* homeVC.swift */,
 				C56419091DEB0F4800547074 /* pictureCell.swift */,
 				C56418C51DE996F900547074 /* Assets.xcassets */,
@@ -198,6 +207,7 @@
 				TargetAttributes = {
 					C56418BA1DE996F900547074 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 3ZE7PDF7KM;
 						LastSwiftMigration = 0810;
 					};
 				};
@@ -244,7 +254,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C564190A1DEB0F4800547074 /* pictureCell.swift in Sources */,
+				C58E0E171DFC86C90023A2AB /* guestVC.swift in Sources */,
 				C56418ED1DE9AF2B00547074 /* signUpVC.swift in Sources */,
+				C55177731DF97EFD000C6CE5 /* followersCell.swift in Sources */,
+				C55177711DF97EBF000C6CE5 /* followersVC.swift in Sources */,
 				C56418EF1DE9AF4400547074 /* signInVC.swift in Sources */,
 				C56419001DEB085A00547074 /* homeVC.swift in Sources */,
 				C56418BF1DE996F900547074 /* AppDelegate.swift in Sources */,
@@ -367,6 +380,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3ZE7PDF7KM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -383,6 +397,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3ZE7PDF7KM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

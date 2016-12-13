@@ -66,7 +66,7 @@ class resetPasswordVC: UIViewController {
                 
             
             } else{
-                print(error?.localizedDescription)
+                print(error!.localizedDescription)
             }
             
             
